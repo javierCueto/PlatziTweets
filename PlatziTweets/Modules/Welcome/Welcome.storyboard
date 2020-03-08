@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bt5-iV-9fV">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="FCQ-Ja-E7v">
+            <objects>
+                <viewController id="5bB-En-Z9Z" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZAZ-Y2-pm4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBg" translatesAutoresizingMaskIntoConstraints="NO" id="eVz-no-IC5">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896.00000000000011"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q0R-Fp-7Uw">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PlatziTweets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7g-AG-mnk">
+                                        <rect key="frame" x="97.5" y="343" width="219" height="50"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="36"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="La comunidad mas grande de devs iOS." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSG-99-BdS">
+                                        <rect key="frame" x="50" y="398" width="314" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owX-Q1-317">
+                                        <rect key="frame" x="50" y="707" width="314" height="55"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="738-ac-Cd6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
+                                        <state key="normal" title="Iniciar sesión">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="T5j-oE-beR" kind="show" id="Ivc-Ek-H2w"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZY-bp-sf0">
+                                        <rect key="frame" x="50" y="791" width="314" height="30"/>
+                                        <state key="normal" title="Registro">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Ub2-Tj-WCD" kind="show" id="M40-Rj-NmH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.43217572773972601" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="tZY-bp-sf0" secondAttribute="bottom" constant="75" id="1qB-1p-grP"/>
+                                    <constraint firstItem="sSG-99-BdS" firstAttribute="leading" secondItem="Q0R-Fp-7Uw" secondAttribute="leading" constant="50" id="2l7-Fp-hG0"/>
+                                    <constraint firstItem="tZY-bp-sf0" firstAttribute="leading" secondItem="Q0R-Fp-7Uw" secondAttribute="leading" constant="50" id="Kls-qk-UPJ"/>
+                                    <constraint firstItem="tZY-bp-sf0" firstAttribute="top" secondItem="owX-Q1-317" secondAttribute="bottom" constant="29" id="R2V-te-OBe"/>
+                                    <constraint firstAttribute="trailing" secondItem="sSG-99-BdS" secondAttribute="trailing" constant="50" id="Sgn-EP-u9y"/>
+                                    <constraint firstItem="A7g-AG-mnk" firstAttribute="centerX" secondItem="Q0R-Fp-7Uw" secondAttribute="centerX" id="TFp-3V-Wxf"/>
+                                    <constraint firstItem="sSG-99-BdS" firstAttribute="top" secondItem="A7g-AG-mnk" secondAttribute="bottom" constant="5" id="X4j-lz-cYC"/>
+                                    <constraint firstAttribute="trailing" secondItem="owX-Q1-317" secondAttribute="trailing" constant="50" id="hxl-QU-xeg"/>
+                                    <constraint firstItem="owX-Q1-317" firstAttribute="leading" secondItem="Q0R-Fp-7Uw" secondAttribute="leading" constant="50" id="k8s-lv-ooo"/>
+                                    <constraint firstItem="A7g-AG-mnk" firstAttribute="centerY" secondItem="Q0R-Fp-7Uw" secondAttribute="centerY" constant="-80" id="mSP-YD-tBe"/>
+                                    <constraint firstAttribute="trailing" secondItem="tZY-bp-sf0" secondAttribute="trailing" constant="50" id="p3Y-lD-fmt"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="eVz-no-IC5" firstAttribute="leading" secondItem="SOr-su-Ti9" secondAttribute="leading" id="AWw-LQ-odA"/>
+                            <constraint firstItem="eVz-no-IC5" firstAttribute="top" secondItem="ZAZ-Y2-pm4" secondAttribute="top" id="FGL-KR-4ED"/>
+                            <constraint firstItem="Q0R-Fp-7Uw" firstAttribute="leading" secondItem="ZAZ-Y2-pm4" secondAttribute="leading" id="RE1-k0-IOV"/>
+                            <constraint firstItem="Q0R-Fp-7Uw" firstAttribute="top" secondItem="ZAZ-Y2-pm4" secondAttribute="top" id="Xyx-0U-Hcs"/>
+                            <constraint firstAttribute="bottom" secondItem="eVz-no-IC5" secondAttribute="bottom" id="cRL-tv-XBw"/>
+                            <constraint firstAttribute="trailing" secondItem="Q0R-Fp-7Uw" secondAttribute="trailing" id="cY7-uh-XIw"/>
+                            <constraint firstAttribute="bottom" secondItem="Q0R-Fp-7Uw" secondAttribute="bottom" id="fmC-Ml-X9t"/>
+                            <constraint firstItem="eVz-no-IC5" firstAttribute="trailing" secondItem="SOr-su-Ti9" secondAttribute="trailing" id="xbq-J4-CDv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SOr-su-Ti9"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="h1Z-go-Izo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f7a-B1-L6i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="556.52173913043487" y="-3.3482142857142856"/>
+        </scene>
+        <!--Iniciar sesión-->
+        <scene sceneID="q8b-kV-m7q">
+            <objects>
+                <viewController id="T5j-oE-beR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k70-lh-3dM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZWo-Nq-Xig">
+                                <rect key="frame" x="20" y="168.5" width="374" height="143"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kvj-18-FIl">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7db-Wx-CaF">
+                                        <rect key="frame" x="0.0" y="44" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6D-57-tpq">
+                                        <rect key="frame" x="0.0" y="88" width="374" height="55"/>
+                                        <color key="backgroundColor" red="0.70421451329999996" green="0.85288745160000001" blue="0.384203136" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="agQ-bi-Fm3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
+                                        <state key="normal" title="Iniciar sesión">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomImage" translatesAutoresizingMaskIntoConstraints="NO" id="KF2-yo-Vz1">
+                                <rect key="frame" x="0.0" y="771" width="414" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="q9N-bO-sW4"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="KF2-yo-Vz1" firstAttribute="leading" secondItem="Bbs-DF-GUc" secondAttribute="leading" id="7KG-zF-dWW"/>
+                            <constraint firstAttribute="bottom" secondItem="KF2-yo-Vz1" secondAttribute="bottom" id="El0-Kv-sOt"/>
+                            <constraint firstItem="Bbs-DF-GUc" firstAttribute="trailing" secondItem="ZWo-Nq-Xig" secondAttribute="trailing" constant="20" id="FLk-Xx-hPr"/>
+                            <constraint firstItem="KF2-yo-Vz1" firstAttribute="trailing" secondItem="Bbs-DF-GUc" secondAttribute="trailing" id="VNj-Li-jXn"/>
+                            <constraint firstItem="ZWo-Nq-Xig" firstAttribute="leading" secondItem="Bbs-DF-GUc" secondAttribute="leading" constant="20" id="XdO-IN-xHf"/>
+                            <constraint firstItem="ZWo-Nq-Xig" firstAttribute="top" secondItem="Bbs-DF-GUc" secondAttribute="top" constant="20" id="sca-YA-S3B"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Bbs-DF-GUc"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Iniciar sesión" id="2GU-8a-FGm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SzQ-am-5AG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1892.753623188406" y="-442.63392857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Zir-H1-Lto">
+            <objects>
+                <viewController id="Ub2-Tj-WCD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OOv-DO-ULN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="7vX-h6-jVy"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ADr-qj-nJd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tmb-B4-ufM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1892.753623188406" y="263.83928571428572"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ibh-Lt-WaD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bt5-iV-9fV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="95G-t7-Amx">
+                        <rect key="frame" x="0.0" y="44" width="414" height="104.5"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5bB-En-Z9Z" kind="relationship" relationship="rootViewController" id="NWh-gv-2dJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E35-2e-e9Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-353.62318840579712" y="-3.3482142857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bottomImage" width="351.5" height="123"/>
+        <image name="loginBg" width="640" height="425"/>
+    </resources>
+</document>
