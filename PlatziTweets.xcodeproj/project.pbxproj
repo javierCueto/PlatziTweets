@@ -16,7 +16,7 @@
 		CFAE83B224154624007DB231 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83B124154624007DB231 /* LoginViewController.swift */; };
 		CFAE83B424154636007DB231 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83B324154636007DB231 /* RegisterViewController.swift */; };
 		CFAE83B724154FC5007DB231 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFAE83B624154FC5007DB231 /* Home.storyboard */; };
-		CFAE83BA241552EB007DB231 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83B9241552EB007DB231 /* EndPoints.swift */; };
+		CFAE83BA241552EB007DB231 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83B9241552EB007DB231 /* Endpoints.swift */; };
 		CFAE83BD241554EE007DB231 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83BC241554EE007DB231 /* LoginRequest.swift */; };
 		CFAE83BF24155536007DB231 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83BE24155536007DB231 /* LoginResponse.swift */; };
 		CFAE83C124155584007DB231 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83C024155584007DB231 /* User.swift */; };
@@ -42,7 +42,7 @@
 		CFAE83B124154624007DB231 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CFAE83B324154636007DB231 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		CFAE83B624154FC5007DB231 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		CFAE83B9241552EB007DB231 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
+		CFAE83B9241552EB007DB231 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		CFAE83BC241554EE007DB231 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		CFAE83BE24155536007DB231 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		CFAE83C024155584007DB231 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -116,7 +116,6 @@
 		CF16AC0124146FF5002C0DA1 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
-				CFAE83B9241552EB007DB231 /* EndPoints.swift */,
 				CFAE83B8241552C8007DB231 /* Endpoints */,
 				CFAE83C224155659007DB231 /* Models */,
 				CF16ABED24146C8E002C0DA1 /* AppDelegate.swift */,
@@ -157,6 +156,7 @@
 		CFAE83B8241552C8007DB231 /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
+				CFAE83B9241552EB007DB231 /* Endpoints.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -322,7 +322,7 @@
 				CFAE83CC2415592F007DB231 /* PostRequest.swift in Sources */,
 				CFAE83C6241556D0007DB231 /* ErrorResponse.swift in Sources */,
 				CFAE83D224155AB3007DB231 /* PostLocation.swift in Sources */,
-				CFAE83BA241552EB007DB231 /* EndPoints.swift in Sources */,
+				CFAE83BA241552EB007DB231 /* Endpoints.swift in Sources */,
 				CFAE83BF24155536007DB231 /* LoginResponse.swift in Sources */,
 				CFAE83C8241556FF007DB231 /* GeneralResponse.swift in Sources */,
 			);
