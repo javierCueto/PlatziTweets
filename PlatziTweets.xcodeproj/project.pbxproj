@@ -15,6 +15,18 @@
 		CFAE83B024154610007DB231 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83AF24154610007DB231 /* WelcomeViewController.swift */; };
 		CFAE83B224154624007DB231 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83B124154624007DB231 /* LoginViewController.swift */; };
 		CFAE83B424154636007DB231 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83B324154636007DB231 /* RegisterViewController.swift */; };
+		CFAE83B724154FC5007DB231 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFAE83B624154FC5007DB231 /* Home.storyboard */; };
+		CFAE83BA241552EB007DB231 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83B9241552EB007DB231 /* EndPoints.swift */; };
+		CFAE83BD241554EE007DB231 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83BC241554EE007DB231 /* LoginRequest.swift */; };
+		CFAE83BF24155536007DB231 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83BE24155536007DB231 /* LoginResponse.swift */; };
+		CFAE83C124155584007DB231 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83C024155584007DB231 /* User.swift */; };
+		CFAE83C6241556D0007DB231 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83C5241556D0007DB231 /* ErrorResponse.swift */; };
+		CFAE83C8241556FF007DB231 /* GeneralResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83C7241556FF007DB231 /* GeneralResponse.swift */; };
+		CFAE83CA24155756007DB231 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83C924155756007DB231 /* RegisterRequest.swift */; };
+		CFAE83CC2415592F007DB231 /* PostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83CB2415592F007DB231 /* PostRequest.swift */; };
+		CFAE83CE24155988007DB231 /* PostRequestLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83CD24155988007DB231 /* PostRequestLocation.swift */; };
+		CFAE83D0241559E5007DB231 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83CF241559E5007DB231 /* Post.swift */; };
+		CFAE83D224155AB3007DB231 /* PostLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83D124155AB3007DB231 /* PostLocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +41,18 @@
 		CFAE83AF24154610007DB231 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		CFAE83B124154624007DB231 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CFAE83B324154636007DB231 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		CFAE83B624154FC5007DB231 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		CFAE83B9241552EB007DB231 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
+		CFAE83BC241554EE007DB231 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		CFAE83BE24155536007DB231 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		CFAE83C024155584007DB231 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CFAE83C5241556D0007DB231 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		CFAE83C7241556FF007DB231 /* GeneralResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralResponse.swift; sourceTree = "<group>"; };
+		CFAE83C924155756007DB231 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		CFAE83CB2415592F007DB231 /* PostRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRequest.swift; sourceTree = "<group>"; };
+		CFAE83CD24155988007DB231 /* PostRequestLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRequestLocation.swift; sourceTree = "<group>"; };
+		CFAE83CF241559E5007DB231 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		CFAE83D124155AB3007DB231 /* PostLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLocation.swift; sourceTree = "<group>"; };
 		F4A9FC58DEC8A91C390196B0 /* Pods-PlatziTweets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlatziTweets.release.xcconfig"; path = "Target Support Files/Pods-PlatziTweets/Pods-PlatziTweets.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +116,9 @@
 		CF16AC0124146FF5002C0DA1 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				CFAE83B9241552EB007DB231 /* EndPoints.swift */,
+				CFAE83B8241552C8007DB231 /* Endpoints */,
+				CFAE83C224155659007DB231 /* Models */,
 				CF16ABED24146C8E002C0DA1 /* AppDelegate.swift */,
 				CF16ABF624146C8F002C0DA1 /* Assets.xcassets */,
 				CF16ABF824146C8F002C0DA1 /* LaunchScreen.storyboard */,
@@ -102,6 +129,7 @@
 		CF16AC022414701C002C0DA1 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CFAE83B524154FB1007DB231 /* Home */,
 				CF16AC032414703F002C0DA1 /* Welcome */,
 			);
 			path = Modules;
@@ -116,6 +144,54 @@
 				CFAE83B324154636007DB231 /* RegisterViewController.swift */,
 			);
 			path = Welcome;
+			sourceTree = "<group>";
+		};
+		CFAE83B524154FB1007DB231 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CFAE83B624154FC5007DB231 /* Home.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CFAE83B8241552C8007DB231 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		CFAE83C224155659007DB231 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CFAE83C024155584007DB231 /* User.swift */,
+				CFAE83C324155662007DB231 /* Responses */,
+				CFAE83C42415566B007DB231 /* Request */,
+				CFAE83CF241559E5007DB231 /* Post.swift */,
+				CFAE83D124155AB3007DB231 /* PostLocation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CFAE83C324155662007DB231 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				CFAE83BE24155536007DB231 /* LoginResponse.swift */,
+				CFAE83C5241556D0007DB231 /* ErrorResponse.swift */,
+				CFAE83C7241556FF007DB231 /* GeneralResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		CFAE83C42415566B007DB231 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				CFAE83BC241554EE007DB231 /* LoginRequest.swift */,
+				CFAE83C924155756007DB231 /* RegisterRequest.swift */,
+				CFAE83CB2415592F007DB231 /* PostRequest.swift */,
+				CFAE83CD24155988007DB231 /* PostRequestLocation.swift */,
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +257,7 @@
 				CF16ABFA24146C8F002C0DA1 /* LaunchScreen.storyboard in Resources */,
 				CF16ABF724146C8F002C0DA1 /* Assets.xcassets in Resources */,
 				CF16AC052414705B002C0DA1 /* Welcome.storyboard in Resources */,
+				CFAE83B724154FC5007DB231 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,9 +311,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFAE83B224154624007DB231 /* LoginViewController.swift in Sources */,
+				CFAE83CA24155756007DB231 /* RegisterRequest.swift in Sources */,
+				CFAE83CE24155988007DB231 /* PostRequestLocation.swift in Sources */,
 				CFAE83B424154636007DB231 /* RegisterViewController.swift in Sources */,
 				CFAE83B024154610007DB231 /* WelcomeViewController.swift in Sources */,
+				CFAE83D0241559E5007DB231 /* Post.swift in Sources */,
+				CFAE83BD241554EE007DB231 /* LoginRequest.swift in Sources */,
+				CFAE83C124155584007DB231 /* User.swift in Sources */,
 				CF16ABEE24146C8E002C0DA1 /* AppDelegate.swift in Sources */,
+				CFAE83CC2415592F007DB231 /* PostRequest.swift in Sources */,
+				CFAE83C6241556D0007DB231 /* ErrorResponse.swift in Sources */,
+				CFAE83D224155AB3007DB231 /* PostLocation.swift in Sources */,
+				CFAE83BA241552EB007DB231 /* EndPoints.swift in Sources */,
+				CFAE83BF24155536007DB231 /* LoginResponse.swift in Sources */,
+				CFAE83C8241556FF007DB231 /* GeneralResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

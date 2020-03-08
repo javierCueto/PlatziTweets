@@ -8,6 +8,8 @@
 
 import UIKit
 import NotificationBannerSwift
+import Simple_Networking
+import SVProgressHUD
 
 
 class LoginViewController: UIViewController {
@@ -23,28 +25,63 @@ class LoginViewController: UIViewController {
         performLogin()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupUI()
-    }
-    
-    
-    //MARK: - private methods
-    private func setupUI(){
-        loginButton.layer.cornerRadius = 25
-    }
-    
-    
-    private func performLogin(){
-        guard let email = emailTextField.text, !email.isEmpty else {
-            NotificationBanner(title: "Error", subtitle: "Ingresa un correo", style: .warning).show()
-            return
+
+        override func viewDidLoad() {
+            super.viewDidLoad()
+
+            setupUI()
         }
         
-        guard let password = passwordTextField.text, !password.isEmpty else {
-            NotificationBanner(title: "Error", subtitle: "Ingresa una contraseña segura", style: .warning).show()
-            return
+        // MARK: - Private Methods
+        
+        private func setupUI() {
+            loginButton.layer.cornerRadius = 25
+        }
+        
+        private func performLogin() {
+            guard let email = emailTextField.text, !email.isEmpty else {
+                NotificationBanner(title: "Error", subtitle: "Debes especificar un correo.", style: .warning).show()
+                
+                return
+            }
+            
+            guard let password = passwordTextField.text, !password.isEmpty else {
+                NotificationBanner(title: "Error", subtitle: "Debes especificar una contraseña.", style: .warning).show()
+                
+                return
+            }
+            
+            // Crear request
+            let request = LoginRequest(email: email, password: password)
+            
+            // Iniciamos la carga
+            SVProgressHUD.show()
+            
+            // Llamar a librería de red
+            SN.post(endpoint: Endpoints.login,
+                    model: request) { (response: SNResultWithEntity<LoginResponse, ErrorResponse>) in
+                        
+                        SVProgressHUD.dismiss()
+                        
+                        switch response {
+                        case .success(let user):
+                            NotificationBanner(subtitle: "Bienveido \(user.user.names)", style: .success).show()
+                            
+                        case .error(let error):
+                            print(error.localizedDescription)
+                            return
+                            // todo lo malo :(
+                            
+                        case .errorResult(let entity):
+                            return
+                            // error pero no tan malo :)
+                        }
+                
+            }
+            
+            // performSegue(withIdentifier: "showHome", sender: nil)
+            
+            // Iniciar sesión aquí!
         }
     }
 
-}

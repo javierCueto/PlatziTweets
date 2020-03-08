@@ -156,11 +156,20 @@
                         <outlet property="emailTextField" destination="Kvj-18-FIl" id="M0l-Sg-l1k"/>
                         <outlet property="loginButton" destination="o6D-57-tpq" id="cAT-2Z-mdo"/>
                         <outlet property="passwordTextField" destination="7db-Wx-CaF" id="Re8-RO-bu5"/>
+                        <segue destination="xgN-uq-EhK" kind="presentation" identifier="showHome" modalPresentationStyle="fullScreen" id="H8B-6u-FH6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SzQ-am-5AG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1893" y="-422"/>
+            <point key="canvasLocation" x="1893" y="-471"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="Jz3-ia-8Jz">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="xgN-uq-EhK" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="67N-T1-FxR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3761" y="-180"/>
         </scene>
         <!--Registro-->
         <scene sceneID="Zir-H1-Lto">
@@ -178,7 +187,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Cyn-J6-icM">
-                                <rect key="frame" x="20" y="168.5" width="374" height="187"/>
+                                <rect key="frame" x="20" y="160" width="374" height="187"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hrG-41-o5y">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
@@ -229,11 +238,12 @@
                         <outlet property="nameTextField" destination="4JP-qW-MRO" id="X4h-AP-hHP"/>
                         <outlet property="passwordTextField" destination="aTo-2c-trN" id="H7n-fi-GOC"/>
                         <outlet property="registerButton" destination="Shb-zw-6cW" id="gGp-0o-oLl"/>
+                        <segue destination="xgN-uq-EhK" kind="presentation" identifier="showHome" modalPresentationStyle="fullScreen" id="Akb-S2-GYU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tmb-B4-ufM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1893" y="212"/>
+            <point key="canvasLocation" x="1893" y="285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ibh-Lt-WaD">
@@ -258,4 +268,7 @@
         <image name="bottomImage" width="351.5" height="123"/>
         <image name="loginBg" width="640" height="425"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="H8B-6u-FH6"/>
+    </inferredMetricsTieBreakers>
 </document>

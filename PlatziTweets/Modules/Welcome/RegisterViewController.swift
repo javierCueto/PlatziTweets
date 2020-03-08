@@ -48,5 +48,7 @@ class RegisterViewController: UIViewController {
             NotificationBanner(title: "Error", subtitle: "Ingresa nombres en el campo", style: .warning).show()
             return
         }
+        
+        performSegue(withIdentifier: "showHome", sender: nil)
     }
 }
