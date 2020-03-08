@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		66180F715C9310AE8C6E2ADC /* Pods_PlatziTweets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257E38C79F5BA49A459ECD28 /* Pods_PlatziTweets.framework */; };
 		CF16ABEE24146C8E002C0DA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16ABED24146C8E002C0DA1 /* AppDelegate.swift */; };
-		CF16ABF224146C8E002C0DA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16ABF124146C8E002C0DA1 /* ViewController.swift */; };
 		CF16ABF724146C8F002C0DA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF16ABF624146C8F002C0DA1 /* Assets.xcassets */; };
 		CF16ABFA24146C8F002C0DA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF16ABF824146C8F002C0DA1 /* LaunchScreen.storyboard */; };
 		CF16AC052414705B002C0DA1 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF16AC042414705B002C0DA1 /* Welcome.storyboard */; };
+		CFAE83B024154610007DB231 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83AF24154610007DB231 /* WelcomeViewController.swift */; };
+		CFAE83B224154624007DB231 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83B124154624007DB231 /* LoginViewController.swift */; };
+		CFAE83B424154636007DB231 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83B324154636007DB231 /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,11 +22,13 @@
 		CE977E0DAC722006A83C2605 /* Pods-PlatziTweets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlatziTweets.debug.xcconfig"; path = "Target Support Files/Pods-PlatziTweets/Pods-PlatziTweets.debug.xcconfig"; sourceTree = "<group>"; };
 		CF16ABEA24146C8E002C0DA1 /* PlatziTweets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlatziTweets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF16ABED24146C8E002C0DA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CF16ABF124146C8E002C0DA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CF16ABF624146C8F002C0DA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF16ABF924146C8F002C0DA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF16ABFB24146C8F002C0DA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF16AC042414705B002C0DA1 /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
+		CFAE83AF24154610007DB231 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		CFAE83B124154624007DB231 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CFAE83B324154636007DB231 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F4A9FC58DEC8A91C390196B0 /* Pods-PlatziTweets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlatziTweets.release.xcconfig"; path = "Target Support Files/Pods-PlatziTweets/Pods-PlatziTweets.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,7 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				CF16ABED24146C8E002C0DA1 /* AppDelegate.swift */,
-				CF16ABF124146C8E002C0DA1 /* ViewController.swift */,
 				CF16ABF624146C8F002C0DA1 /* Assets.xcassets */,
 				CF16ABF824146C8F002C0DA1 /* LaunchScreen.storyboard */,
 			);
@@ -108,6 +111,9 @@
 			isa = PBXGroup;
 			children = (
 				CF16AC042414705B002C0DA1 /* Welcome.storyboard */,
+				CFAE83AF24154610007DB231 /* WelcomeViewController.swift */,
+				CFAE83B124154624007DB231 /* LoginViewController.swift */,
+				CFAE83B324154636007DB231 /* RegisterViewController.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -227,7 +233,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF16ABF224146C8E002C0DA1 /* ViewController.swift in Sources */,
+				CFAE83B224154624007DB231 /* LoginViewController.swift in Sources */,
+				CFAE83B424154636007DB231 /* RegisterViewController.swift in Sources */,
+				CFAE83B024154610007DB231 /* WelcomeViewController.swift in Sources */,
 				CF16ABEE24146C8E002C0DA1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
