@@ -12,11 +12,14 @@
 		CF16ABF724146C8F002C0DA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF16ABF624146C8F002C0DA1 /* Assets.xcassets */; };
 		CF16ABFA24146C8F002C0DA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF16ABF824146C8F002C0DA1 /* LaunchScreen.storyboard */; };
 		CF16AC052414705B002C0DA1 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF16AC042414705B002C0DA1 /* Welcome.storyboard */; };
+		CF5F5AD5241880AC00ED649F /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F5AD3241880AC00ED649F /* TweetTableViewCell.swift */; };
+		CF5F5AD6241880AC00ED649F /* TweetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF5F5AD4241880AC00ED649F /* TweetTableViewCell.xib */; };
+		CF5F5AD82418818A00ED649F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F5AD72418818A00ED649F /* HomeViewController.swift */; };
 		CFAE83B024154610007DB231 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83AF24154610007DB231 /* WelcomeViewController.swift */; };
 		CFAE83B224154624007DB231 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83B124154624007DB231 /* LoginViewController.swift */; };
 		CFAE83B424154636007DB231 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83B324154636007DB231 /* RegisterViewController.swift */; };
 		CFAE83B724154FC5007DB231 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFAE83B624154FC5007DB231 /* Home.storyboard */; };
-		CFAE83BA241552EB007DB231 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83B9241552EB007DB231 /* Endpoints.swift */; };
+		CFAE83BA241552EB007DB231 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83B9241552EB007DB231 /* EndPoints.swift */; };
 		CFAE83BD241554EE007DB231 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83BC241554EE007DB231 /* LoginRequest.swift */; };
 		CFAE83BF24155536007DB231 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83BE24155536007DB231 /* LoginResponse.swift */; };
 		CFAE83C124155584007DB231 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83C024155584007DB231 /* User.swift */; };
@@ -38,11 +41,14 @@
 		CF16ABF924146C8F002C0DA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF16ABFB24146C8F002C0DA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF16AC042414705B002C0DA1 /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
+		CF5F5AD3241880AC00ED649F /* TweetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
+		CF5F5AD4241880AC00ED649F /* TweetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TweetTableViewCell.xib; sourceTree = "<group>"; };
+		CF5F5AD72418818A00ED649F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CFAE83AF24154610007DB231 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		CFAE83B124154624007DB231 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CFAE83B324154636007DB231 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		CFAE83B624154FC5007DB231 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		CFAE83B9241552EB007DB231 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		CFAE83B9241552EB007DB231 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 		CFAE83BC241554EE007DB231 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		CFAE83BE24155536007DB231 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		CFAE83C024155584007DB231 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -116,6 +122,7 @@
 		CF16AC0124146FF5002C0DA1 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				CFAE83B9241552EB007DB231 /* EndPoints.swift */,
 				CFAE83B8241552C8007DB231 /* Endpoints */,
 				CFAE83C224155659007DB231 /* Models */,
 				CF16ABED24146C8E002C0DA1 /* AppDelegate.swift */,
@@ -145,10 +152,21 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
+		CFAA35DD2418800200306784 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CF5F5AD3241880AC00ED649F /* TweetTableViewCell.swift */,
+				CF5F5AD4241880AC00ED649F /* TweetTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		CFAE83B524154FB1007DB231 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CFAA35DD2418800200306784 /* Cells */,
 				CFAE83B624154FC5007DB231 /* Home.storyboard */,
+				CF5F5AD72418818A00ED649F /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -156,7 +174,6 @@
 		CFAE83B8241552C8007DB231 /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
-				CFAE83B9241552EB007DB231 /* Endpoints.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -164,10 +181,10 @@
 		CFAE83C224155659007DB231 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CFAE83C024155584007DB231 /* User.swift */,
 				CFAE83C324155662007DB231 /* Responses */,
 				CFAE83C42415566B007DB231 /* Request */,
 				CFAE83CF241559E5007DB231 /* Post.swift */,
+				CFAE83C024155584007DB231 /* User.swift */,
 				CFAE83D124155AB3007DB231 /* PostLocation.swift */,
 			);
 			path = Models;
@@ -254,6 +271,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF5F5AD6241880AC00ED649F /* TweetTableViewCell.xib in Resources */,
 				CF16ABFA24146C8F002C0DA1 /* LaunchScreen.storyboard in Resources */,
 				CF16ABF724146C8F002C0DA1 /* Assets.xcassets in Resources */,
 				CF16AC052414705B002C0DA1 /* Welcome.storyboard in Resources */,
@@ -313,6 +331,7 @@
 				CFAE83B224154624007DB231 /* LoginViewController.swift in Sources */,
 				CFAE83CA24155756007DB231 /* RegisterRequest.swift in Sources */,
 				CFAE83CE24155988007DB231 /* PostRequestLocation.swift in Sources */,
+				CF5F5AD82418818A00ED649F /* HomeViewController.swift in Sources */,
 				CFAE83B424154636007DB231 /* RegisterViewController.swift in Sources */,
 				CFAE83B024154610007DB231 /* WelcomeViewController.swift in Sources */,
 				CFAE83D0241559E5007DB231 /* Post.swift in Sources */,
@@ -322,9 +341,10 @@
 				CFAE83CC2415592F007DB231 /* PostRequest.swift in Sources */,
 				CFAE83C6241556D0007DB231 /* ErrorResponse.swift in Sources */,
 				CFAE83D224155AB3007DB231 /* PostLocation.swift in Sources */,
-				CFAE83BA241552EB007DB231 /* Endpoints.swift in Sources */,
+				CFAE83BA241552EB007DB231 /* EndPoints.swift in Sources */,
 				CFAE83BF24155536007DB231 /* LoginResponse.swift in Sources */,
 				CFAE83C8241556FF007DB231 /* GeneralResponse.swift in Sources */,
+				CF5F5AD5241880AC00ED649F /* TweetTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

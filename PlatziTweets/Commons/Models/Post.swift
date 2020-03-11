@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Post: Codable{
+struct Post: Codable {
     let id: String
     let author: User
     let imageUrl: String
