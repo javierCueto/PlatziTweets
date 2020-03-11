@@ -15,6 +15,7 @@
 		CF5F5AD5241880AC00ED649F /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F5AD3241880AC00ED649F /* TweetTableViewCell.swift */; };
 		CF5F5AD6241880AC00ED649F /* TweetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF5F5AD4241880AC00ED649F /* TweetTableViewCell.xib */; };
 		CF5F5AD82418818A00ED649F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F5AD72418818A00ED649F /* HomeViewController.swift */; };
+		CF5F5ADA2418871300ED649F /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F5AD92418871300ED649F /* AddPostViewController.swift */; };
 		CFAE83B024154610007DB231 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83AF24154610007DB231 /* WelcomeViewController.swift */; };
 		CFAE83B224154624007DB231 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83B124154624007DB231 /* LoginViewController.swift */; };
 		CFAE83B424154636007DB231 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83B324154636007DB231 /* RegisterViewController.swift */; };
@@ -44,6 +45,7 @@
 		CF5F5AD3241880AC00ED649F /* TweetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
 		CF5F5AD4241880AC00ED649F /* TweetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TweetTableViewCell.xib; sourceTree = "<group>"; };
 		CF5F5AD72418818A00ED649F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CF5F5AD92418871300ED649F /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 		CFAE83AF24154610007DB231 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		CFAE83B124154624007DB231 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CFAE83B324154636007DB231 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				CFAA35DD2418800200306784 /* Cells */,
 				CFAE83B624154FC5007DB231 /* Home.storyboard */,
 				CF5F5AD72418818A00ED649F /* HomeViewController.swift */,
+				CF5F5AD92418871300ED649F /* AddPostViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				CFAE83BD241554EE007DB231 /* LoginRequest.swift in Sources */,
 				CFAE83C124155584007DB231 /* User.swift in Sources */,
 				CF16ABEE24146C8E002C0DA1 /* AppDelegate.swift in Sources */,
+				CF5F5ADA2418871300ED649F /* AddPostViewController.swift in Sources */,
 				CFAE83CC2415592F007DB231 /* PostRequest.swift in Sources */,
 				CFAE83C6241556D0007DB231 /* ErrorResponse.swift in Sources */,
 				CFAE83D224155AB3007DB231 /* PostLocation.swift in Sources */,
