@@ -1,4 +1,4 @@
-framework module Simple_Networking {
+module Simple_Networking {
   umbrella header "Simple-Networking-umbrella.h"
 
   export *

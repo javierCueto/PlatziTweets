@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "07E54A78BCF82272E99319D7F7F5E8C1"
-               BuildableName = "KeychainSwift.framework"
+               BuildableName = "libKeychainSwift.a"
                BlueprintName = "KeychainSwift"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

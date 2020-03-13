@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gEe-T3-TCH">
-                                <rect key="frame" x="0.0" y="148.5" width="414" height="713.5"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqe-NF-Tnf">
@@ -74,7 +74,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cJK-qV-IAi">
-                                <rect key="frame" x="20" y="118.5" width="374" height="187"/>
+                                <rect key="frame" x="20" y="118.5" width="374" height="254"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ckM-ZI-y2j">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="120"/>
@@ -86,8 +86,22 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4B-LH-H0Z">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUq-Bi-fLi">
                                         <rect key="frame" x="0.0" y="140" width="374" height="47"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="47" id="3jk-ob-vi9"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title=" Abrir cámara " image="camera" catalog="system">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="openCameraAction" destination="T7d-o7-169" eventType="touchUpInside" id="frd-mi-hKN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4B-LH-H0Z">
+                                        <rect key="frame" x="0.0" y="207" width="374" height="47"/>
                                         <color key="backgroundColor" red="0.70421451329999996" green="0.85288745160000001" blue="0.384203136" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="47" id="79d-89-myG"/>
@@ -100,6 +114,12 @@
                                             <action selector="addPostAction" destination="T7d-o7-169" eventType="touchUpInside" id="JNm-uV-BVG"/>
                                         </connections>
                                     </button>
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="60P-YS-7eD">
+                                        <rect key="frame" x="0.0" y="254" width="374" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="OEd-TY-3Ix"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomImage" translatesAutoresizingMaskIntoConstraints="NO" id="KXv-4f-3tl">
@@ -128,7 +148,9 @@
                     <connections>
                         <outlet property="addPostButton" destination="p4B-LH-H0Z" id="JEH-qm-Hy3"/>
                         <outlet property="backButton" destination="Abv-s2-H4W" id="kBv-UU-sVi"/>
+                        <outlet property="openCameraButton" destination="nUq-Bi-fLi" id="7Yj-MV-B1g"/>
                         <outlet property="postTextView" destination="ckM-ZI-y2j" id="CQN-Xf-S5s"/>
+                        <outlet property="previewImageView" destination="60P-YS-7eD" id="4Sm-IJ-SCm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NkH-u5-kA3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -156,6 +178,7 @@
     </scenes>
     <resources>
         <image name="bottomImage" width="351.5" height="123"/>
+        <image name="camera" catalog="system" width="64" height="48"/>
         <image name="plus.bubble" catalog="system" width="64" height="54"/>
     </resources>
 </document>

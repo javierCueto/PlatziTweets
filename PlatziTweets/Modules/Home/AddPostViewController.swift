@@ -16,17 +16,25 @@ class AddPostViewController: UIViewController {
     
     //MARK: - IBOulets
     @IBOutlet weak var postTextView: UITextView!
+    @IBOutlet weak var previewImageView: UIImageView!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var addPostButton: UIButton!
+    @IBOutlet weak var openCameraButton: UIButton!
     
     //MARK: - Acctions
     @IBAction func addPostAction(){
         savePost()
     }
         
+    @IBAction func openCameraAction() {
+        openCamera()
+    }
+    
     @IBAction func dismissAction(){
         dismiss(animated: true, completion: nil)
     }
+    
+    private var imagePicker: UIImagePickerController?
     
     
     override func viewDidLoad() {
@@ -36,8 +44,24 @@ class AddPostViewController: UIViewController {
     }
     
     
+    private func openCamera(){
+        imagePicker = UIImagePickerController()
+        imagePicker?.sourceType = .camera
+        imagePicker?.cameraFlashMode = .off
+        imagePicker?.cameraCaptureMode = .photo
+        imagePicker?.allowsEditing = true
+        imagePicker?.delegate = self
+        
+        guard let imagePicker = imagePicker else {
+            return
+        }
+        
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
     private func setupUI(){
         addPostButton.layer.cornerRadius = 25
+        openCameraButton.layer.cornerRadius = 25
     }
     
     
@@ -63,4 +87,19 @@ class AddPostViewController: UIViewController {
     }
 
 
+}
+
+extension AddPostViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        //close camera
+        
+        imagePicker?.dismiss(animated: true, completion: nil)
+        
+        if info.keys.contains(.originalImage){
+            previewImageView.isHidden = false
+            
+            // get the image
+            previewImageView.image = info[.originalImage] as? UIImage
+        }
+    }
 }
