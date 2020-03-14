@@ -10,6 +10,7 @@ import UIKit
 import Simple_Networking
 import NotificationBannerSwift
 import SVProgressHUD
+import FirebaseStorage
 
 class AddPostViewController: UIViewController {
 
@@ -64,8 +65,53 @@ class AddPostViewController: UIViewController {
         openCameraButton.layer.cornerRadius = 25
     }
     
-    
+    private func uploadPhotoToFirebase(){
+        // asegurar and comprimir la imagen
+        guard
+            let imageSaved = previewImageView.image,
+            let imageSavedData: Data = imageSaved.jpegData(compressionQuality: 0.1) else{
+                return
+        }
+        SVProgressHUD.show()
+        // configuracion para guardar la foto en firebase
+        let metaDataConfig = StorageMetadata()
+        
+        metaDataConfig.contentType = "image/jpg"
+        
+        // reerencia al storage de firebase
+        
+        let storage = Storage.storage()
+        
+        // nombre de la imagen
+        let imageName = Int.random(in: 100...1000)
+        
+        // referencia a la carpeta donde se va a guardar la foto
+        let folderReference = storage.reference(withPath: "fotos-tweers/\(imageName).jpg")
+        
+        //subir la foto a firebase
+        
+        DispatchQueue.global(qos: .background).async {
+            folderReference.putData(imageSavedData, metadata: metaDataConfig) { (metaData: StorageMetadata?, error: Error?) in
+                DispatchQueue.main.async {
+                    //detener la carga
+                    SVProgressHUD.dismiss()
+                    if let error = error {
+                        NotificationBanner(title: "Error", subtitle: error.localizedDescription, style: .warning).show()
+                        return
+                    }
+                    
+                    // obtener la URL de la descarga
+                    
+                    folderReference.downloadURL { (url: URL?,error: Error?) in
+                        print(url?.absoluteString ?? "")
+                    }
+                }
+            }
+        }
+    }
     private func savePost(){
+        uploadPhotoToFirebase()
+        return
         
         let request = PostRequest(text: postTextView.text, imageUrl: nil, videoUrl: nil, location: nil)
         
