@@ -11,6 +11,9 @@ import Simple_Networking
 import NotificationBannerSwift
 import SVProgressHUD
 import FirebaseStorage
+import AVKit
+import AVFoundation
+import MobileCoreServices
 
 class AddPostViewController: UIViewController {
 
@@ -24,7 +27,8 @@ class AddPostViewController: UIViewController {
     
     //MARK: - Acctions
     @IBAction func addPostAction(){
-        savePost()
+        openVideoCamera()
+        //uploadPhotoToFirebase()
     }
         
     @IBAction func openCameraAction() {
@@ -36,12 +40,31 @@ class AddPostViewController: UIViewController {
     }
     
     private var imagePicker: UIImagePickerController?
+    private var currentVideoURL: URL?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         // Do any additional setup after loading the view.
+    }
+    
+    private func openVideoCamera(){
+        imagePicker = UIImagePickerController()
+        imagePicker?.sourceType = .camera
+        imagePicker?.mediaTypes = [kUTTypeMovie as String]
+        imagePicker?.cameraFlashMode = .off
+        imagePicker?.cameraCaptureMode = .video
+        imagePicker?.videoQuality = .typeMedium
+        imagePicker?.videoMaximumDuration = TimeInterval(5)
+        imagePicker?.allowsEditing = true
+        imagePicker?.delegate = self
+          
+        guard let imagePicker = imagePicker else {
+            return
+        }
+          
+          present(imagePicker, animated: true, completion: nil)
     }
     
     
@@ -103,17 +126,19 @@ class AddPostViewController: UIViewController {
                     // obtener la URL de la descarga
                     
                     folderReference.downloadURL { (url: URL?,error: Error?) in
-                        print(url?.absoluteString ?? "")
+                       let downloadUrl = url?.absoluteString ?? ""
+                        
+                        self.savePost(imageUrl: downloadUrl)
                     }
                 }
             }
         }
     }
-    private func savePost(){
-        uploadPhotoToFirebase()
-        return
+    private func savePost(imageUrl: String?){
+       // uploadPhotoToFirebase()
+       // return
         
-        let request = PostRequest(text: postTextView.text, imageUrl: nil, videoUrl: nil, location: nil)
+        let request = PostRequest(text: postTextView.text, imageUrl: imageUrl, videoUrl: nil, location: nil)
         
         SVProgressHUD.show()
         
@@ -141,11 +166,23 @@ extension AddPostViewController: UIImagePickerControllerDelegate, UINavigationCo
         
         imagePicker?.dismiss(animated: true, completion: nil)
         
+        //capturar imagen
         if info.keys.contains(.originalImage){
             previewImageView.isHidden = false
             
             // get the image
             previewImageView.image = info[.originalImage] as? UIImage
+        }
+        
+        
+        if info.keys.contains(.mediaURL), let recordedVideoUrl = (info[.mediaURL] as? URL)?.absoluteURL{
+            let avPlayer = AVPlayer(url: recordedVideoUrl)
+            let avPlayerController = AVPlayerViewController()
+            avPlayerController.player = avPlayer
+            
+            present(avPlayerController, animated: true){
+                avPlayerController.player?.play()
+            }
         }
     }
 }

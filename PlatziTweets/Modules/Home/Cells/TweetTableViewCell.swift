@@ -28,6 +28,7 @@ class TweetTableViewCell: UITableViewCell {
         nickNameLabel.text = post.author.nickname
         messageLabel.text = post.text
         if post.hasImage{
+            tweetImageView.isHidden = false
             tweetImageView.kf.setImage(with: URL(string: post.imageUrl))
         }else{
             tweetImageView.isHidden = true
