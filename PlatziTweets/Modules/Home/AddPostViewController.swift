@@ -42,9 +42,16 @@ class AddPostViewController: UIViewController {
     }
     
     @IBAction func addPostAction(){
-        //openVideoCamera()
-        uploadVideoToFirebase()
-        //uploadPhotoToFirebase()
+        if currentVideoURL != nil{
+            uploadVideoToFirebase()
+        }
+        
+        if previewImageView.image !=  nil {
+            uploadPhotoToFirebase()
+        }
+        
+        savePost(imageUrl: nil, videoUrl: nil)
+
     }
     
     @IBAction func openCameraAction() {
@@ -236,10 +243,19 @@ class AddPostViewController: UIViewController {
     }
     
     private func savePost(imageUrl: String?, videoUrl: String?){
-        // uploadPhotoToFirebase()
-        // return
+        // request de localizacion
+        var postLocation: PostRequestLocation?
+
+        if let userLocation = userLocation {
+            postLocation = PostRequestLocation(latitude: userLocation.coordinate.latitude,
+                                               longitude: userLocation.coordinate.longitude)
+        }
         
-        let request = PostRequest(text: postTextView.text, imageUrl: imageUrl, videoUrl: videoUrl, location: nil)
+        
+        let request = PostRequest(text: postTextView.text,
+                                  imageUrl: imageUrl,
+                                  videoUrl: videoUrl,
+                                  location: postLocation)
         
         SVProgressHUD.show()
         

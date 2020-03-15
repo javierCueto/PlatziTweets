@@ -42,7 +42,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2s5-Ww-xzi"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Tweets" id="OEk-o9-Ylh"/>
+                    <navigationItem key="navigationItem" title="Tweets" id="OEk-o9-Ylh">
+                        <barButtonItem key="rightBarButtonItem" title="Soy el Mapa" id="RaV-lK-jzq">
+                            <connections>
+                                <segue destination="z2j-82-fOp" kind="show" identifier="showMap" id="CgH-tl-Bvy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="gEe-T3-TCH" id="COH-dd-fHu"/>
                     </connections>
@@ -50,6 +56,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g8G-OI-AvO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="676.81159420289862" y="41.517857142857139"/>
+        </scene>
+        <!--Mapa-->
+        <scene sceneID="HBi-Ef-j4D">
+            <objects>
+                <viewController id="z2j-82-fOp" customClass="MapViewController" customModule="PlatziTweets" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N5b-0D-cUq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t9L-zb-u7N">
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="t9L-zb-u7N" firstAttribute="top" secondItem="aBw-Yh-10b" secondAttribute="top" id="20O-GT-9VE"/>
+                            <constraint firstItem="t9L-zb-u7N" firstAttribute="leading" secondItem="aBw-Yh-10b" secondAttribute="leading" id="6mg-hs-o7e"/>
+                            <constraint firstItem="aBw-Yh-10b" firstAttribute="trailing" secondItem="t9L-zb-u7N" secondAttribute="trailing" id="R2B-qE-Mrz"/>
+                            <constraint firstItem="aBw-Yh-10b" firstAttribute="bottom" secondItem="t9L-zb-u7N" secondAttribute="bottom" id="eSy-39-KBT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aBw-Yh-10b"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Mapa" id="S6d-1J-aHq"/>
+                    <connections>
+                        <outlet property="mapContainer" destination="t9L-zb-u7N" id="Adg-cL-d7Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G7Z-Sf-OHc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2170" y="-584"/>
         </scene>
         <!--Add Post View Controller-->
         <scene sceneID="38H-C0-vxb">

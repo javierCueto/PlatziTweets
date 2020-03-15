@@ -134,3 +134,12 @@ extension HomeViewController: UITableViewDelegate{
         //return dataSource[indexPath.row].author.email =
     //}
 }
+
+extension HomeViewController {
+    // transition between pages just with storyboards
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showMap", let mapViewController = segue.destination as? MapViewController {
+            mapViewController.posts = dataSource.filter{$0.hasLocation}
+        }
+    }
+}

@@ -17,6 +17,7 @@
 		CF5F5AD82418818A00ED649F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F5AD72418818A00ED649F /* HomeViewController.swift */; };
 		CF5F5ADA2418871300ED649F /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F5AD92418871300ED649F /* AddPostViewController.swift */; };
 		CF6FADF2241B3EE900551341 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF6FADF1241B3EE900551341 /* GoogleService-Info.plist */; };
+		CFA42B67241DB1A000EED3B3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA42B66241DB1A000EED3B3 /* MapViewController.swift */; };
 		CFAE83B024154610007DB231 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83AF24154610007DB231 /* WelcomeViewController.swift */; };
 		CFAE83B224154624007DB231 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83B124154624007DB231 /* LoginViewController.swift */; };
 		CFAE83B424154636007DB231 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83B324154636007DB231 /* RegisterViewController.swift */; };
@@ -47,6 +48,7 @@
 		CF5F5AD72418818A00ED649F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CF5F5AD92418871300ED649F /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 		CF6FADF1241B3EE900551341 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CFA42B66241DB1A000EED3B3 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CFAE83AF24154610007DB231 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		CFAE83B124154624007DB231 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CFAE83B324154636007DB231 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				CFAE83B624154FC5007DB231 /* Home.storyboard */,
 				CF5F5AD72418818A00ED649F /* HomeViewController.swift */,
 				CF5F5AD92418871300ED649F /* AddPostViewController.swift */,
+				CFA42B66241DB1A000EED3B3 /* MapViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				CFAE83B424154636007DB231 /* RegisterViewController.swift in Sources */,
 				CFAE83B024154610007DB231 /* WelcomeViewController.swift in Sources */,
 				CFAE83D0241559E5007DB231 /* Post.swift in Sources */,
+				CFA42B67241DB1A000EED3B3 /* MapViewController.swift in Sources */,
 				CFAE83BD241554EE007DB231 /* LoginRequest.swift in Sources */,
 				CFAE83C124155584007DB231 /* User.swift in Sources */,
 				CF16ABEE24146C8E002C0DA1 /* AppDelegate.swift in Sources */,
