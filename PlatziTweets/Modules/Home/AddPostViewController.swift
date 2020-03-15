@@ -14,9 +14,10 @@ import FirebaseStorage
 import AVKit
 import AVFoundation
 import MobileCoreServices
+import CoreLocation
 
 class AddPostViewController: UIViewController {
-
+    
     
     //MARK: - IBOulets
     @IBOutlet weak var postTextView: UITextView!
@@ -24,15 +25,43 @@ class AddPostViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var addPostButton: UIButton!
     @IBOutlet weak var openCameraButton: UIButton!
+    @IBOutlet weak var videoButton: UIButton!
     
     //MARK: - Acctions
+    @IBAction func openPreviewAction() {
+        guard let currentVideoURL = currentVideoURL else {
+            return
+        }
+        let avPlayer = AVPlayer(url: currentVideoURL)
+        let avPlayerController = AVPlayerViewController()
+        avPlayerController.player = avPlayer
+        
+        present(avPlayerController, animated: true){
+            avPlayerController.player?.play()
+        }
+    }
+    
     @IBAction func addPostAction(){
-        openVideoCamera()
+        //openVideoCamera()
+        uploadVideoToFirebase()
         //uploadPhotoToFirebase()
     }
-        
+    
     @IBAction func openCameraAction() {
-        openCamera()
+        
+        let alert = UIAlertController(title: "Cámara", message: "Selecciona una opción", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cámara", style: .default, handler: { _ in
+            self.openCamera()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Video", style: .default, handler: { _ in
+            self.openVideoCamera()
+        }))
+        
+        
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .destructive, handler: nil ))
+
+        present(alert, animated: true, completion: nil)
     }
     
     @IBAction func dismissAction(){
@@ -41,12 +70,32 @@ class AddPostViewController: UIViewController {
     
     private var imagePicker: UIImagePickerController?
     private var currentVideoURL: URL?
-    
+    private var locationManager: CLLocationManager?
+    private var userLocation: CLLocation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        requestLocation()
         setupUI()
         // Do any additional setup after loading the view.
+    }
+    
+    
+    private func requestLocation(){
+        // validar gps activo y disponible
+        guard CLLocationManager.locationServicesEnabled() else{
+            return
+        }
+        
+        locationManager = CLLocationManager()
+        
+        locationManager?.delegate = self
+        
+        locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+        
+        locationManager?.requestAlwaysAuthorization()
+        
+        locationManager?.startUpdatingLocation()
     }
     
     private func openVideoCamera(){
@@ -59,12 +108,12 @@ class AddPostViewController: UIViewController {
         imagePicker?.videoMaximumDuration = TimeInterval(5)
         imagePicker?.allowsEditing = true
         imagePicker?.delegate = self
-          
+        
         guard let imagePicker = imagePicker else {
             return
         }
-          
-          present(imagePicker, animated: true, completion: nil)
+        
+        present(imagePicker, animated: true, completion: nil)
     }
     
     
@@ -86,6 +135,7 @@ class AddPostViewController: UIViewController {
     private func setupUI(){
         addPostButton.layer.cornerRadius = 25
         openCameraButton.layer.cornerRadius = 25
+        videoButton.isHidden = true
     }
     
     private func uploadPhotoToFirebase(){
@@ -126,38 +176,89 @@ class AddPostViewController: UIViewController {
                     // obtener la URL de la descarga
                     
                     folderReference.downloadURL { (url: URL?,error: Error?) in
-                       let downloadUrl = url?.absoluteString ?? ""
+                        let downloadUrl = url?.absoluteString ?? ""
                         
-                        self.savePost(imageUrl: downloadUrl)
+                        self.savePost(imageUrl: downloadUrl, videoUrl: nil)
                     }
                 }
             }
         }
     }
-    private func savePost(imageUrl: String?){
-       // uploadPhotoToFirebase()
-       // return
+    
+    
+    ///volver esta dos funciones una sola TODO
+    private func uploadVideoToFirebase(){
+        // asegurar que el video existe y convertir el data en video
+        guard
+            let currenVideoSaveURL = currentVideoURL,
+            let videoData: Data = try? Data(contentsOf: currenVideoSaveURL) else{
+                return
+        }
         
-        let request = PostRequest(text: postTextView.text, imageUrl: imageUrl, videoUrl: nil, location: nil)
+        SVProgressHUD.show()
+        // configuracion para guardar la foto en firebase
+        let metaDataConfig = StorageMetadata()
+        
+        metaDataConfig.contentType = "video/MP4"
+        
+        // reerencia al storage de firebase
+        
+        let storage = Storage.storage()
+        
+        // nombre de la imagen
+        let videoName = Int.random(in: 100...1000)
+        
+        // referencia a la carpeta donde se va a guardar la foto
+        let folderReference = storage.reference(withPath: "videos-tweets/\(videoName).mp4")
+        
+        //subir la foto a firebase
+        
+        DispatchQueue.global(qos: .background).async {
+            folderReference.putData(videoData, metadata: metaDataConfig) { (metaData: StorageMetadata?, error: Error?) in
+                DispatchQueue.main.async {
+                    //detener la carga
+                    SVProgressHUD.dismiss()
+                    if let error = error {
+                        NotificationBanner(title: "Error", subtitle: error.localizedDescription, style: .warning).show()
+                        return
+                    }
+                    
+                    // obtener la URL de la descarga
+                    
+                    folderReference.downloadURL { (url: URL?,error: Error?) in
+                        let downloadUrl = url?.absoluteString ?? ""
+                        
+                        self.savePost(imageUrl: nil,videoUrl: downloadUrl)
+                    }
+                }
+            }
+        }
+    }
+    
+    private func savePost(imageUrl: String?, videoUrl: String?){
+        // uploadPhotoToFirebase()
+        // return
+        
+        let request = PostRequest(text: postTextView.text, imageUrl: imageUrl, videoUrl: videoUrl, location: nil)
         
         SVProgressHUD.show()
         
         SN.post(endpoint: Endpoints.post, model: request) { (response: SNResultWithEntity<Post, ErrorResponse>) in
-           
+            
             SVProgressHUD.dismiss()
             switch response {
-              case .success:
+            case .success:
                 self.dismiss(animated: true, completion: nil)
-              case .error(let error):
+            case .error(let error):
                 NotificationBanner(title: "Error", subtitle: error.localizedDescription, style: .danger).show()
-                  
-              case .errorResult(let entity):
-                  NotificationBanner(title: "Error", subtitle: entity.error, style: .warning).show()
-              }
+                
+            case .errorResult(let entity):
+                NotificationBanner(title: "Error", subtitle: entity.error, style: .warning).show()
+            }
         }
     }
-
-
+    
+    
 }
 
 extension AddPostViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -176,13 +277,18 @@ extension AddPostViewController: UIImagePickerControllerDelegate, UINavigationCo
         
         
         if info.keys.contains(.mediaURL), let recordedVideoUrl = (info[.mediaURL] as? URL)?.absoluteURL{
-            let avPlayer = AVPlayer(url: recordedVideoUrl)
-            let avPlayerController = AVPlayerViewController()
-            avPlayerController.player = avPlayer
-            
-            present(avPlayerController, animated: true){
-                avPlayerController.player?.play()
-            }
+            videoButton.isHidden = false
+            currentVideoURL = recordedVideoUrl
         }
+    }
+}
+
+extension AddPostViewController: CLLocationManagerDelegate{
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let bestLocation = locations.last else {
+            return
+        }
+        
+        userLocation = bestLocation
     }
 }

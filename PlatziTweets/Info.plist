@@ -44,5 +44,11 @@
     
     <key>NSMicrophoneUsageDescription</key>
     <string>Usaremos el microfono :)</string>
+    
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Usaremos el GPS :)</string>
+    
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>Usaremos el GPS :)</string>
 </dict>
 </plist>

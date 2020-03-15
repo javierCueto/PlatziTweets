@@ -50,6 +50,9 @@
                                 <state key="normal" title=" Ver Video" image="video.fill" catalog="system">
                                     <color key="titleColor" red="0.19608002899999999" green="0.19607555870000001" blue="0.19607856870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="openVideoAction" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ka5-4l-PJP"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02/02/2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcx-IU-u8s">
                                 <rect key="frame" x="0.0" y="334" width="57.5" height="12"/>
